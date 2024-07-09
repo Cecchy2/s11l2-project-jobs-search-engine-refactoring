@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux";
 export const ADD_FAVORITE_COMPANIES = "FAVORITE_COMPANIES";
 export const SAVE_DATA = "SAVE_DATA";
 export const REMOVE_FAVOURITE = "REMOVE_FAVOURITE";
+export const SET_QUERY = "SET_QUERY";
+export const SET_JOBS = "SET_JOBS";
 
 const dispatch = useDispatch;
 
@@ -12,6 +14,15 @@ export const addFavoriteAction = (value) => {
     payload: value,
   };
 };
+export const setQuery = (query) => ({
+  type: SET_QUERY,
+  payload: query,
+});
+
+export const setJobs = (jobs) => ({
+  type: SET_JOBS,
+  payload: jobs,
+});
 
 export const removeFavorite = () => {
   return {

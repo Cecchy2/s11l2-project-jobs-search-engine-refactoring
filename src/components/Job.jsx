@@ -7,6 +7,7 @@ const Job = ({ data }) => {
   const dispatch = useDispatch();
   const favoriteCompanies = useSelector((state) => state.favorite.favoriteCompanies);
   const favorite = favoriteCompanies.includes(data.company_name);
+  /* const data = useSelector((state) => state.saveData.data); */
 
   console.log(data);
 
