@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const FavoritesCompanies = () => {
-  const favoriteCompanies = useSelector((state) => state.favoriteCompanies);
+  const favoriteCompanies = useSelector((state) => state.favorite.favoriteCompanies);
 
   return (
     <div>

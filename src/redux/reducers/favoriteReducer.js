@@ -1,4 +1,4 @@
-import { FAVORITE_COMPANIES } from "../actions";
+import { ADD_FAVORITE_COMPANIES } from "../actions";
 
 const initialState = {
   favoriteCompanies: [],
@@ -6,12 +6,16 @@ const initialState = {
 
 const favoriteReducer = (state = initialState, action) => {
   switch (action.type) {
-    case FAVORITE_COMPANIES:
+    case ADD_FAVORITE_COMPANIES:
       return {
         ...state,
-
         favoriteCompanies: [...state.favoriteCompanies, action.payload],
       };
+    /* case REMOVE_FAVORITE
+      return {
+        ...state,
+        favoriteCompanies: 
+      } */
 
     default:
       return state;
