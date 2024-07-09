@@ -3,6 +3,7 @@ import { Container, Row, Col, Form } from "react-bootstrap";
 import Job from "./Job";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { saveDataAction } from "../redux/actions";
 
 const MainSearch = () => {
   const [query, setQuery] = useState("");
@@ -23,10 +24,7 @@ const MainSearch = () => {
       if (response.ok) {
         const { data } = await response.json();
         setJobs(data);
-        dispatch({
-          type: "SAVE_DATA",
-          payload: data,
-        });
+        dispatch(saveDataAction(data));
       } else {
         alert("Error fetching results");
       }

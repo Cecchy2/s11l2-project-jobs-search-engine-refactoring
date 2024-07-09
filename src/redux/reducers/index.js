@@ -1,3 +1,5 @@
+import { FAVORITE_COMPANIES, SAVE_DATA } from "../actions";
+
 const initialState = {
   favoriteCompanies: [],
   data: null,
@@ -5,13 +7,13 @@ const initialState = {
 
 const mainReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "FAVORITE_COMPANIES":
+    case FAVORITE_COMPANIES:
       return {
         ...state,
         ...state.favourite,
         favoriteCompanies: [...state.favoriteCompanies, action.payload],
       };
-    case "SAVE_DATA":
+    case SAVE_DATA:
       return {
         ...state,
         data: action.payload,
