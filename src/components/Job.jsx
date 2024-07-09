@@ -5,7 +5,7 @@ import { addFavoriteAction } from "../redux/actions";
 
 const Job = ({ data }) => {
   const dispatch = useDispatch();
-  const favoriteCompanies = useSelector((state) => state.favoriteCompanies);
+  const favoriteCompanies = useSelector((state) => state.favorite.favoriteCompanies);
   const favorite = favoriteCompanies.includes(data.company_name);
 
   console.log(data);
