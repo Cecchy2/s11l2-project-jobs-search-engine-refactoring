@@ -1,4 +1,4 @@
-import { ADD_FAVORITE_COMPANIES } from "../actions";
+import { ADD_FAVORITE_COMPANIES, REMOVE_FAVORITE_COMPANY } from "../actions";
 
 const initialState = {
   favoriteCompanies: [],
@@ -11,12 +11,11 @@ const favoriteReducer = (state = initialState, action) => {
         ...state,
         favoriteCompanies: [...state.favoriteCompanies, action.payload],
       };
-    /* case REMOVE_FAVORITE
+    case REMOVE_FAVORITE_COMPANY:
       return {
         ...state,
-        favoriteCompanies: 
-      } */
-
+        favoriteCompanies: state.favoriteCompanies.filter((company) => company !== action.payload),
+      };
     default:
       return state;
   }
